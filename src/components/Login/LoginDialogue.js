@@ -1,4 +1,4 @@
-import { Dialog } from '@mui/material'
+import { Box, Dialog, TextField } from '@mui/material'
 import React from 'react'
 
 const LoginDialogue = ({ open, setOpen }) => {
@@ -7,7 +7,12 @@ const LoginDialogue = ({ open, setOpen }) => {
 	}
 	return (
 		<Dialog open={open} onClose={handleClose}>
-			Helloo
+			<Box>
+				<Box></Box>
+				<Box>
+					<TextField></TextField>
+				</Box>
+			</Box>
 		</Dialog>
 	)
 }
