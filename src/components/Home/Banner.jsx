@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from "react-multi-carousel";
+import { bannerData } from '../../constants/data';
 
 
 const responsive = {
@@ -24,7 +25,13 @@ const Banner = () => {
         <Carousel
         responsive={responsive}
         >
-
+            {
+                bannerData.map(data=>{
+                    return (
+                      <img src={data.url} alt='Banner'/>
+                    )
+                })
+            }
         </Carousel>
     );
 };
