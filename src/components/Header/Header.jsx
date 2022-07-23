@@ -1,5 +1,6 @@
 import { AppBar,Toolbar , styled, Box, Typography} from '@mui/material';
 import React from 'react';
+import Search from './Search';
 
 const StyledHeader = styled(AppBar)`
   background-color: #2874f0;
@@ -38,6 +39,7 @@ const Header = () => {
                   <PlusImage src={subURL} alt="sub-logo" />
                 </Box>
               </Component>
+              <Search></Search>
             </Toolbar>
            </StyledHeader>
     );
