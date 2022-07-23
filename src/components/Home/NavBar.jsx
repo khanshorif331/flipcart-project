@@ -24,15 +24,11 @@ const NavBar = () => {
     return (
         <Component>
             {
-                navData.map(data => {
-                   return (
+                navData.map(data =>                 
                    <Container>
                         <img src={data.url} alt='nav' style={{width:64}}></img>
                         <Text>{data.text}</Text>
                     </Container>
-                    )
-                   }
-                    
                 )
             }
         </Component>
