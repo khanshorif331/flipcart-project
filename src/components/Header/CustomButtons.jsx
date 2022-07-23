@@ -46,7 +46,7 @@ const CustomButtons = () => {
                 <ShoppingCart/>
                 <Typography>Cart</Typography>
             </Container>
-            <LoginDialogue open={open}></LoginDialogue>
+            <LoginDialogue open={open} setOpen={setOpen}></LoginDialogue>
         </Wrapper>
     );
 };
