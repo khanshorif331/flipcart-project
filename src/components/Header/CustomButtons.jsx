@@ -8,8 +8,8 @@ const Wrapper = styled(Box)`
     margin: 0 3% 0 auto;
     & > button, & > p, & > div{
         margin-right: 40px;
-        font-size: 16px;
-    }
+        font-size: 14px;
+    };
     align-items: center;
 `
 
@@ -23,7 +23,7 @@ const LoginButton = styled(Button)`
     text-transform: none;
     padding: 5px 40px;
     border-radius: 2px;
-    box-shadow: none;
+    box-shadow: none; 
     font-weight: 600;
     height: 32px;
 `
