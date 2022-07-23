@@ -1,10 +1,22 @@
-import { Box, styled } from '@mui/material';
+import { Box, styled, Typography } from '@mui/material';
 import React from 'react';
 import { navData } from '../../constants/data';
 
 const Component = styled(Box)`
     display: flex;
+    margin: 55px 130px 0 130px;
+    justify-content: space-between;
 `
+
+const Container = styled(Box)` 
+    padding: 12px 8px;
+`
+
+const Text = styled(Typography)`
+    font-size: 14px;
+`
+
+
 
 const NavBar = () => {
     return (
@@ -12,10 +24,10 @@ const NavBar = () => {
             {
                 navData.map(data => {
                    return (
-                   <Box>
-                        <img src={data.url} alt='nav'></img>
-                        <p>{data.text}</p>
-                    </Box>
+                   <Container>
+                        <img src={data.url} alt='nav' style={{width:64}}></img>
+                        <Text>{data.text}</Text>
+                    </Container>
                     )
                    }
                     
