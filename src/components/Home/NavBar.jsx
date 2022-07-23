@@ -10,10 +10,12 @@ const Component = styled(Box)`
 
 const Container = styled(Box)` 
     padding: 12px 8px;
+    text-align: center;
 `
 
 const Text = styled(Typography)`
     font-size: 14px;
+    font-weight: 600;
 `
 
 
