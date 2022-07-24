@@ -81,8 +81,18 @@ const accountIntitialValues = {
 	},
 }
 
+const signupInitialValues = {
+	firstname: '',
+	lastname: '',
+	username: '',
+	email: '',
+	password: '',
+	phone: '',
+}
+
 const LoginDialogue = ({ open, setOpen }) => {
 	const [account, toggleAccount] = useState(accountIntitialValues.login)
+	const [signup, setSignup] = useState('')
 
 	const toggleSignup = () => {
 		toggleAccount(accountIntitialValues.signup)
@@ -92,6 +102,12 @@ const LoginDialogue = ({ open, setOpen }) => {
 		setOpen(false)
 		toggleAccount(accountIntitialValues.login)
 	}
+
+	const onInputChange = e => {
+		setSignup({ ...signup, [e.target.name]: e.target.value })
+		console.log(signup)
+	}
+
 	return (
 		<Dialog
 			open={open}
@@ -130,32 +146,41 @@ const LoginDialogue = ({ open, setOpen }) => {
 					) : (
 						<Wrapper>
 							<TextField
+								onChange={e => onInputChange(e)}
+								name='firstname'
 								variant='standard'
 								label='Enter First Name'
 							></TextField>
 							<TextField
+								onChange={e => onInputChange(e)}
+								name='lastname'
 								variant='standard'
 								label='Last Name'
 							></TextField>
 							<TextField
+								onChange={e => onInputChange(e)}
+								name='username'
 								variant='standard'
 								label='Enter Username'
 							></TextField>
 							<TextField
+								onChange={e => onInputChange(e)}
+								name='email'
 								variant='standard'
 								label='Enter Email'
 							></TextField>
 							<TextField
+								onChange={e => onInputChange(e)}
+								name='password'
 								variant='standard'
 								label='Enter Password'
 							></TextField>
 							<TextField
+								onChange={e => onInputChange(e)}
+								name='phone'
 								variant='standard'
 								label='Enter Phone'
 							></TextField>
-
-							{/* <RequestOTP>Continue</RequestOTP> */}
-							<Text>{account.subHeading}</Text>
 							<LoginButton
 
 							// onClick={() => {
