@@ -15,7 +15,9 @@ const Component = styled(Box)`
 //  https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/login_img_c4a81e.png
 
 const Image = styled(Box)`
-	background: #2874f0;
+	background: #2874f0
+		url(https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/login_img_c4a81e.png)
+		no-repeat center;
 	height: 100%;
 	width: 20%;
 `
