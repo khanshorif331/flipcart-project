@@ -17,8 +17,8 @@ const Image = styled(Box)`
 	background: #2874f0
 		url(https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/login_img_c4a81e.png)
 		no-repeat center 85%;
-	height: 100%;
-	width: 30%;
+	height: 80%;
+	width: 28%;
 	padding: 45px 35px;
 	& > p,
 	& > h5 {
@@ -68,31 +68,45 @@ const CreateAccount = styled(Typography)`
 	cursor: pointer;
 `
 
-const LoginDialogue = ({ open, setOpen }) => {
-	const [signup, setSignup] = useState(true)
+const accountIntitialValues = {
+	login: {
+		view: 'login',
+		heading: 'Login',
+		subHeading: 'Get access to your Orders, Wishlist and Recommendations',
+	},
+	signup: {
+		view: 'signup',
+		heading: 'Looks like you are new here',
+		subHeading: 'Sign up with your mobile number to get started',
+	},
+}
 
-	const handleSignup = () => {
-		setSignup(false)
+const LoginDialogue = ({ open, setOpen }) => {
+	const [account, toggleAccount] = useState(accountIntitialValues.login)
+
+	const toggleSignup = () => {
+		toggleAccount(accountIntitialValues.signup)
 	}
 
 	const handleClose = () => {
 		setOpen(false)
+		toggleAccount(accountIntitialValues.login)
 	}
 	return (
 		<Dialog
 			open={open}
 			onClose={handleClose}
-			PaperProps={{ sx: { maxWidth: 'unset' } }}
+			PaperProps={{ sx: { maxWidth: 'unset', maxHeight: 'unset' } }}
 		>
 			<Component>
 				<Box style={{ display: 'flex', height: '100%' }}>
 					<Image>
-						<Typography variant='h5'>Login</Typography>
+						<Typography variant='h5'>{account.heading}</Typography>
 						<Typography style={{ marginTop: 20 }}>
-							Get access to your Orders, Wishlist and Recommendations
+							{account.subHeading}
 						</Typography>
 					</Image>
-					{signup ? (
+					{account.view === 'login' ? (
 						<Wrapper>
 							<TextField
 								variant='standard'
@@ -109,7 +123,7 @@ const LoginDialogue = ({ open, setOpen }) => {
 							<LoginButton>Login</LoginButton>
 							<Typography style={{ textAlign: 'center' }}>OR</Typography>
 							<RequestOTP>Request OTP</RequestOTP>
-							<CreateAccount onClick={handleSignup}>
+							<CreateAccount onClick={() => toggleSignup()}>
 								New to Flipkart? Create an account
 							</CreateAccount>
 						</Wrapper>
@@ -117,21 +131,39 @@ const LoginDialogue = ({ open, setOpen }) => {
 						<Wrapper>
 							<TextField
 								variant='standard'
-								label='Enter Email/Mobile Number'
+								label='Enter First Name'
+							></TextField>
+							<TextField
+								variant='standard'
+								label='Last Name'
+							></TextField>
+							<TextField
+								variant='standard'
+								label='Enter Username'
+							></TextField>
+							<TextField
+								variant='standard'
+								label='Enter Email'
 							></TextField>
 							<TextField
 								variant='standard'
 								label='Enter Password'
 							></TextField>
+							<TextField
+								variant='standard'
+								label='Enter Phone'
+							></TextField>
 
-							<RequestOTP>Continue</RequestOTP>
-							<CreateAccount
-								onClick={() => {
-									setSignup(true)
-								}}
+							{/* <RequestOTP>Continue</RequestOTP> */}
+							<Text>{account.subHeading}</Text>
+							<LoginButton
+
+							// onClick={() => {
+							// 	setSignup(true)
+							// }}
 							>
-								Existing User? Login
-							</CreateAccount>
+								Continue
+							</LoginButton>
 						</Wrapper>
 					)}
 				</Box>
