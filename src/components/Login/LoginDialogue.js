@@ -7,7 +7,7 @@ import {
 	styled,
 } from '@mui/material'
 import React, { useState } from 'react'
-import { authenticateSignup } from '../../Service/api'
+import { authenticateSignup } from '../../Service/api.js'
 
 const Component = styled(Box)`
 	height: 70vh;
@@ -106,11 +106,12 @@ const LoginDialogue = ({ open, setOpen }) => {
 
 	const onInputChange = e => {
 		setSignup({ ...signup, [e.target.name]: e.target.value })
-		console.log(signup)
 	}
 
 	const signupUser = async () => {
 		let response = await authenticateSignup(signup)
+		if (!response) return
+		handleClose()
 	}
 
 	return (
