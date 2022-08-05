@@ -6,7 +6,8 @@ import {
 	Typography,
 	styled,
 } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { DataContext } from '../../context/DataProvider.jsx'
 import { authenticateSignup } from '../../Service/api.js'
 
 const Component = styled(Box)`
@@ -95,6 +96,8 @@ const LoginDialogue = ({ open, setOpen }) => {
 	const [account, toggleAccount] = useState(accountIntitialValues.login)
 	const [signup, setSignup] = useState(signupInitialValues)
 
+	const [setAccount] = useContext(DataContext)
+
 	const toggleSignup = () => {
 		toggleAccount(accountIntitialValues.signup)
 	}
@@ -112,6 +115,7 @@ const LoginDialogue = ({ open, setOpen }) => {
 		let response = await authenticateSignup(signup)
 		if (!response) return
 		handleClose()
+		setAccount(signup.firstname)
 	}
 
 	return (
