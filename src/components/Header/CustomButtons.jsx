@@ -40,7 +40,7 @@ const CustomButtons = () => {
     return (
         <Wrapper>
             {
-                account ? <Profile account={account}></Profile> :
+                account ? <Profile account={account} setAccount={setAccount}></Profile> :
                 <LoginButton 
                 variant='contained'
                 onClick={() => openDialog()}
