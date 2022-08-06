@@ -30,6 +30,13 @@ const Home = () => {
             <Component>
                 <Banner></Banner>
                 <Slide products={products}></Slide>
+                <Slide products={products}></Slide>
+                <Slide products={products}></Slide>
+                <Slide products={products}></Slide>
+                <Slide products={products}></Slide>
+                <Slide products={products}></Slide>
+                <Slide products={products}></Slide>
+                <Slide products={products}></Slide>
             </Component>
         </>
     );
