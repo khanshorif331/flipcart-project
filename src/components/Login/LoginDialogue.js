@@ -96,7 +96,7 @@ const LoginDialogue = ({ open, setOpen }) => {
 	const [account, toggleAccount] = useState(accountIntitialValues.login)
 	const [signup, setSignup] = useState(signupInitialValues)
 
-	const [setAccount] = useContext(DataContext)
+	const { setAccount } = useContext(DataContext)
 
 	const toggleSignup = () => {
 		toggleAccount(accountIntitialValues.signup)
@@ -113,6 +113,7 @@ const LoginDialogue = ({ open, setOpen }) => {
 
 	const signupUser = async () => {
 		let response = await authenticateSignup(signup)
+		console.log(response, 'response')
 		if (!response) return
 		handleClose()
 		setAccount(signup.firstname)
