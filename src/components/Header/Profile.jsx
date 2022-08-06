@@ -7,6 +7,11 @@ const Component = styled(Menu)`
     margin-top : 5px
 `
 
+const Logout = styled(Typography)`
+    font-size: 14px;
+    margin-left: 20px;
+`
+
 const Profile = ({account}) => {
     const [open,setOpen] = useState(false)
     const handleClick = (event) => {
@@ -26,11 +31,9 @@ const Profile = ({account}) => {
                 onClose={handleClose}
             >
                 <MenuItem onClick={handleClose}>
-                    <PowerSettingsNewIcon></PowerSettingsNewIcon>
-                    <Typography>Logout</Typography>
+                    <PowerSettingsNewIcon color='primary' fontSize='small'></PowerSettingsNewIcon>
+                    <Logout>Logout</Logout>
                 </MenuItem>
-                {/* <MenuItem onClick={handleClose}>My account</MenuItem>
-                <MenuItem onClick={handleClose}>Logout</MenuItem> */}
             </Component>
         </>
     );
