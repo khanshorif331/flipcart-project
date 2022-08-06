@@ -1,6 +1,8 @@
 import React from 'react';
 import Carousel from "react-multi-carousel";
 
+import 'react-multi-carousel/lib/styles.css';
+
 
 
 
@@ -23,8 +25,24 @@ const Slide = ({products}) => {
     return (
         <Carousel
             responsive={responsive}
+            swipeable={false}
+            draggable={false}
+            infinite={true}
+            autoPlay={true}
+            autoPlaySpeed={4000}
+            keyBoardControl={true}
+            centerMode={true}
+            dotListClass="custom-dot-list-style"
+            itemClass="carousel-item-padding-40-px"
+            containerClass="carousel-container"
         >
-
+            {
+                products.map(product => {
+                    return (
+                        <img src={product.url} alt='product'></img>
+                    )
+                })
+            }
         </Carousel>
     );
 };
