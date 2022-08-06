@@ -2,7 +2,7 @@ import React from 'react';
 import Carousel from "react-multi-carousel";
 
 import 'react-multi-carousel/lib/styles.css';
-
+import { Box, Typography,styled } from '@mui/material';
 
 
 
@@ -21,9 +21,22 @@ const responsive = {
     }
   };
 
+const Component = styled(Box)`
+    margin-top: 10px;
+    background : #FFFFFF
+`
+
+const Deal = styled(Box)`
+    padding: 15px 20px
+`
+
 const Slide = ({products}) => {
     return (
-        <Carousel
+        <Component>
+            <Deal>
+                <Typography>Deal of the Day</Typography>
+            </Deal>
+            <Carousel
             responsive={responsive}
             swipeable={false}
             draggable={false}
@@ -44,6 +57,7 @@ const Slide = ({products}) => {
                 })
             }
         </Carousel>
+        </Component>
     );
 };
 
