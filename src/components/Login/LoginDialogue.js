@@ -8,7 +8,7 @@ import {
 } from '@mui/material'
 import React, { useState, useContext } from 'react'
 import { DataContext } from '../../context/DataProvider.jsx'
-import { authenticateSignup } from '../../Service/api.js'
+import { authenticateSignup, authenticateLogin } from '../../Service/api.js'
 
 const Component = styled(Box)`
 	height: 70vh;
@@ -92,9 +92,15 @@ const signupInitialValues = {
 	phone: '',
 }
 
+const loginInitialValues = {
+	username: '',
+	password: '',
+}
+
 const LoginDialogue = ({ open, setOpen }) => {
 	const [account, toggleAccount] = useState(accountIntitialValues.login)
 	const [signup, setSignup] = useState(signupInitialValues)
+	const [login, setLogin] = useState(loginInitialValues)
 
 	const { setAccount } = useContext(DataContext)
 
@@ -119,6 +125,14 @@ const LoginDialogue = ({ open, setOpen }) => {
 		setAccount(signup.firstname)
 	}
 
+	const onValueChange = e => {
+		setLogin({ ...login, [e.target.name]: e.target.value })
+	}
+
+	const loginUser = async () => {
+		let response = await authenticateLogin(login)
+	}
+
 	return (
 		<Dialog
 			open={open}
@@ -136,10 +150,14 @@ const LoginDialogue = ({ open, setOpen }) => {
 					{account.view === 'login' ? (
 						<Wrapper>
 							<TextField
+								onChange={e => onValueChange(e)}
+								name='username'
 								variant='standard'
 								label='Enter Email/Mobile Number'
 							></TextField>
 							<TextField
+								onChange={e => onValueChange(e)}
+								name='password'
 								variant='standard'
 								label='Enter Password'
 							></TextField>
@@ -147,7 +165,9 @@ const LoginDialogue = ({ open, setOpen }) => {
 								By continuing, you agree to Flipkart's Terms of Use and
 								Privacy Policy.
 							</Text>
-							<LoginButton>Login</LoginButton>
+							<LoginButton onClick={() => loginUser()}>
+								Login
+							</LoginButton>
 							<Typography style={{ textAlign: 'center' }}>OR</Typography>
 							<RequestOTP>Request OTP</RequestOTP>
 							<CreateAccount onClick={() => toggleSignup()}>

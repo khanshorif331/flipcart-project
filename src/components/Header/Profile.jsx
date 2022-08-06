@@ -20,7 +20,7 @@ const Profile = ({account,setAccount}) => {
     const handleClose = () => {
         setOpen(false)
     }
-    const logout = () => {
+    const logoutUser = () => {
         setAccount('')
     }
     return (
@@ -33,7 +33,7 @@ const Profile = ({account,setAccount}) => {
                 open={Boolean(open)}
                 onClose={handleClose}
             >
-                <MenuItem onClick={()=>{handleClose();logout();}}>
+                <MenuItem onClick={()=>{handleClose();logoutUser();}}>
                     <PowerSettingsNewIcon color='primary' fontSize='small'></PowerSettingsNewIcon>
                     <Logout>Logout</Logout>
                 </MenuItem>
