@@ -36,7 +36,6 @@ const Home = () => {
                 <Slide products={products}></Slide>
                 <Slide products={products}></Slide>
                 <Slide products={products}></Slide>
-                <Slide products={products}></Slide>
             </Component>
         </>
     );
