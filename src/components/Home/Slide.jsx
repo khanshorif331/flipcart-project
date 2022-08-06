@@ -3,6 +3,7 @@ import Carousel from "react-multi-carousel";
 
 import 'react-multi-carousel/lib/styles.css';
 import { Box, Typography,styled } from '@mui/material';
+import Countdown from 'react-countdown';
 
 
 
@@ -31,10 +32,15 @@ const Deal = styled(Box)`
 `
 
 const Slide = ({products}) => {
+    const timerURL = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/timer_a73398.svg';
     return (
         <Component>
             <Deal>
                 <Typography>Deal of the Day</Typography>
+                <Box>
+                    <img src={timerURL} alt='timer logo' />
+                    <Countdown  date={Date.now() + 5.04e+7} ></Countdown>
+                </Box>
             </Deal>
             <Carousel
             responsive={responsive}
