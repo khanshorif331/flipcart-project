@@ -97,10 +97,18 @@ const loginInitialValues = {
 	password: '',
 }
 
+const Error = styled(Typography)`
+	font-size: 10px;
+	color: #ff6161;
+	line-height: 0;
+	margin-top: 10px;
+`
+
 const LoginDialogue = ({ open, setOpen }) => {
 	const [account, toggleAccount] = useState(accountIntitialValues.login)
 	const [signup, setSignup] = useState(signupInitialValues)
 	const [login, setLogin] = useState(loginInitialValues)
+	const [error, setError] = useState(false)
 
 	const { setAccount } = useContext(DataContext)
 
@@ -111,6 +119,7 @@ const LoginDialogue = ({ open, setOpen }) => {
 	const handleClose = () => {
 		setOpen(false)
 		toggleAccount(accountIntitialValues.login)
+		setError(false)
 	}
 
 	const onInputChange = e => {
@@ -131,6 +140,12 @@ const LoginDialogue = ({ open, setOpen }) => {
 
 	const loginUser = async () => {
 		let response = await authenticateLogin(login)
+		if (response?.status === 200) {
+			handleClose()
+			setAccount(response.data.data.firstname)
+		} else {
+			setError(true)
+		}
 	}
 
 	return (
@@ -153,8 +168,11 @@ const LoginDialogue = ({ open, setOpen }) => {
 								onChange={e => onValueChange(e)}
 								name='username'
 								variant='standard'
-								label='Enter Email/Mobile Number'
+								label='Enter Username'
 							></TextField>
+							{error && (
+								<Error>Please Enter valid username or password</Error>
+							)}
 							<TextField
 								onChange={e => onValueChange(e)}
 								name='password'
