@@ -6,10 +6,14 @@ import 'react-multi-carousel/lib/styles.css';
 
 
 
-const Image = styled('img')({
+const Image = styled('img')(({theme})=> ({
     width: '100%',
     height: '280px',
-})
+    [theme.breakpoints.down('md')]:{
+        objectFit : 'cover',
+        height : 180
+    }
+}))
 
 const responsive = {
     desktop: {
