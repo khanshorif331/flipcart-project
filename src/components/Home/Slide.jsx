@@ -32,7 +32,7 @@ const Deal = styled(Box)`
     display: flex;
 `
 
-const Slide = ({products,title}) => {
+const Slide = ({products,title,timer}) => {
     const timerURL = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/timer_a73398.svg';
     const renderer = ({ hours, minutes, seconds}) => {
         return <Box variant='span'>{hours}:{minutes}:{seconds} Left</Box>
@@ -69,13 +69,15 @@ const Text = styled(Typography)`
         <Component>
             <Deal>
                 <DealText>{title}</DealText>
-                <Timer>
+                {
+                    timer && <Timer>
                     <img src={timerURL} style={{width:15}} alt='timer logo' />
                     <Countdown 
                         date={Date.now() + 5.04e+7}
                         renderer={renderer}
                     ></Countdown>
                 </Timer>
+                }
                 <ViewAllButton variant='contained' color='primary'>View All</ViewAllButton>
             </Deal>
             <Divider></Divider>

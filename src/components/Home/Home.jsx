@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { getProducts } from '../../redux/actions/productActions';
 import { useDispatch, useSelector } from 'react-redux';
 import Slide from './Slide'
+import MidSlide from './MidSlide';
 
 
 const Component = styled (Box)`
@@ -29,14 +30,14 @@ const Home = () => {
             <NavBar></NavBar>
             <Component>
                 <Banner></Banner>
-                <Slide products={products} title='Deal of the Day'></Slide>
-                <Slide products={products} title='Discounts for You'></Slide>
-                <Slide products={products} title='Suggested Items'></Slide>
-                <Slide products={products} title='Top Selection'></Slide>
-                <Slide products={products} title='Recommended Items'></Slide>
-                <Slide products={products} title='Trending Offers'></Slide>
-                <Slide products={products} title="Season's top Picks"></Slide>
-                <Slide products={products} title="Top Deals on Accessories"></Slide>
+                <MidSlide products={products} title='Deal of the Day' timer={true}></MidSlide>
+                <Slide products={products} title='Discounts for You' timer={false}></Slide>
+                <Slide products={products} title='Suggested Items' timer={false}></Slide>
+                <Slide products={products} title='Top Selection' timer={false}></Slide>
+                <Slide products={products} title='Recommended Items' timer={false}></Slide>
+                <Slide products={products} title='Trending Offers' timer={false}></Slide>
+                <Slide products={products} title="Season's top Picks" timer={false}></Slide>
+                <Slide products={products} title="Top Deals on Accessories" timer={false}></Slide>
             </Component>
         </>
     );
