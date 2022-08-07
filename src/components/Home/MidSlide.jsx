@@ -5,9 +5,12 @@ import Slide from './Slide';
 const Component = styled(Box)`
     display: flex;
 `
-const LeftComponent = styled(Box)`
-    width: 83%;
-`
+const LeftComponent = styled(Box)(({theme})=>({
+    width: '83%',
+    [theme.breakpoints.down('md')]:{
+        width: '100%'
+    }
+}))
 const RightComponent = styled(Box)(({theme})=> ({
     background: '#FFFFFF',
     padding: 5,
