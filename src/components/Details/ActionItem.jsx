@@ -1,5 +1,10 @@
-import { Box ,Button} from '@mui/material';
+import { Box ,Button,styled} from '@mui/material';
 import React from 'react';
+
+const LeftContainer = styled(Box)`
+    min-width: 40%;
+    padding : 40px 0 0 80px;
+`
 
 
 const ActionItem = ({product}) => {
