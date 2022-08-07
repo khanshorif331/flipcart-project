@@ -9,12 +9,17 @@ const Wrapper = styled(Grid)`
     justify-content: space-between;
 `
 
-const Image = styled('img')({
+// theme from material ui...check the mui doc
+const Image = styled('img')(({theme}) => ({
     marginTop : '10px' ,
     width : '100%',
     display : 'flex',
     justifyContent : 'space-between',
-})
+    [theme.breakpoints.down('md')]:{
+        objectFit : 'cover',
+        height  : 120
+    }
+}))
 
 const MidSection = () => {
     const url = 'https://rukminim1.flixcart.com/flap/3006/433/image/4789bc3aefd54494.jpg?q=50';
