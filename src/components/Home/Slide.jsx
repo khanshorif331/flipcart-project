@@ -32,14 +32,14 @@ const Deal = styled(Box)`
     display: flex;
 `
 
-const Slide = ({products}) => {
+const Slide = ({products,title}) => {
     const timerURL = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/timer_a73398.svg';
     const renderer = ({ hours, minutes, seconds}) => {
         return <Box variant='span'>{hours}:{minutes}:{seconds} Left</Box>
       };
 const Timer = styled(Box)`
     display: flex;
-    margin-top: 10px;
+    margin-left: 10px;
     align-items: center;
     color: #7f7f7f;
 `
@@ -68,9 +68,9 @@ const Text = styled(Typography)`
     return (
         <Component>
             <Deal>
-                <DealText>Deal of the Day</DealText>
+                <DealText>{title}</DealText>
                 <Timer>
-                    <img src={timerURL} style={{width:24}} alt='timer logo' />
+                    <img src={timerURL} style={{width:15}} alt='timer logo' />
                     <Countdown 
                         date={Date.now() + 5.04e+7}
                         renderer={renderer}
