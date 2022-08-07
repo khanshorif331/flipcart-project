@@ -12,8 +12,6 @@ const Component = styled(Box) (({theme})=> ({
         margin : 0
     }
 }))
-   
-// `
 
 const Container = styled(Box)` 
     padding: 12px 8px;
