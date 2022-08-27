@@ -129,7 +129,7 @@ const LoginDialogue = ({ open, setOpen }) => {
 	const signupUser = async () => {
 		let response = await authenticateSignup(signup)
 		console.log(response, 'response')
-		if (!response) return
+		if (!response) return alert('Username already exist!')
 		handleClose()
 		setAccount(signup.firstname)
 	}
@@ -157,7 +157,7 @@ const LoginDialogue = ({ open, setOpen }) => {
 			<Component>
 				<Box style={{ display: 'flex', height: '100%' }}>
 					<Image>
-						<Typography variant='h5'>{account.heading}</Typography>
+						<Typography variant="h5">{account.heading}</Typography>
 						<Typography style={{ marginTop: 20 }}>
 							{account.subHeading}
 						</Typography>
@@ -166,18 +166,18 @@ const LoginDialogue = ({ open, setOpen }) => {
 						<Wrapper>
 							<TextField
 								onChange={e => onValueChange(e)}
-								name='username'
-								variant='standard'
-								label='Enter Username'
+								name="username"
+								variant="standard"
+								label="Enter Username"
 							></TextField>
 							{error && (
 								<Error>Please Enter valid username or password</Error>
 							)}
 							<TextField
 								onChange={e => onValueChange(e)}
-								name='password'
-								variant='standard'
-								label='Enter Password'
+								name="password"
+								variant="standard"
+								label="Enter Password"
 							></TextField>
 							<Text>
 								By continuing, you agree to Flipkart's Terms of Use and
@@ -196,39 +196,39 @@ const LoginDialogue = ({ open, setOpen }) => {
 						<Wrapper>
 							<TextField
 								onChange={e => onInputChange(e)}
-								name='firstname'
-								variant='standard'
-								label='Enter First Name'
+								name="firstname"
+								variant="standard"
+								label="Enter First Name"
 							></TextField>
 							<TextField
 								onChange={e => onInputChange(e)}
-								name='lastname'
-								variant='standard'
-								label='Last Name'
+								name="lastname"
+								variant="standard"
+								label="Last Name"
 							></TextField>
 							<TextField
 								onChange={e => onInputChange(e)}
-								name='username'
-								variant='standard'
-								label='Enter Username'
+								name="username"
+								variant="standard"
+								label="Enter Username"
 							></TextField>
 							<TextField
 								onChange={e => onInputChange(e)}
-								name='email'
-								variant='standard'
-								label='Enter Email'
+								name="email"
+								variant="standard"
+								label="Enter Email"
 							></TextField>
 							<TextField
 								onChange={e => onInputChange(e)}
-								name='password'
-								variant='standard'
-								label='Enter Password'
+								name="password"
+								variant="standard"
+								label="Enter Password"
 							></TextField>
 							<TextField
 								onChange={e => onInputChange(e)}
-								name='phone'
-								variant='standard'
-								label='Enter Phone'
+								name="phone"
+								variant="standard"
+								label="Enter Phone"
 							></TextField>
 							<LoginButton
 								onClick={() => {
