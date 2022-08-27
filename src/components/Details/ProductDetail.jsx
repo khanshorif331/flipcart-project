@@ -52,6 +52,21 @@ const ProductDetail = ({product}) => {
                         <TableCell style={{color:'#878787'}}>Delivery : </TableCell>
                         <TableCell style={{fontWeight:600}}>Delivery by {date.toDateString()} | ₹40</TableCell>
                     </TableRow>
+                    <TableRow>
+                        <TableCell style={{color:'#878787'}}>Warranty : </TableCell>
+                        <TableCell>No Warranty</TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell style={{color:'#878787'}}>Seller : </TableCell>
+                        <TableCell>
+                            <Box component='span'  style={{color:'#2874f0'}}>SuperComNet</Box>
+                            <Typography>GST invoice available</Typography>
+                        </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell style={{color:'#878787'}}>Warranty : </TableCell>
+                        <TableCell style={{fontWeight:600}}>No Warranty</TableCell>
+                    </TableRow>
                 </TableBody>
             </Table>
         </>
