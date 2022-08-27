@@ -18,9 +18,12 @@ const StyledBadge = styled(Badge)`
 `
 
 const ColumnText = styled(TableRow)`
+    vertical-align : baseline;
     font-size : 14px;
     & > td {
         font-size : 14px;
+        margin-top:10px;
+        border : none
     }
 `
 

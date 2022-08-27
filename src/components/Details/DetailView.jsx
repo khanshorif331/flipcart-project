@@ -10,12 +10,15 @@ import ProductDetail from './ProductDetail';
 const Component = styled(Box)`
     background : #f2f2f2;
     margin-top : 55px;
+    [theme.breakpoints.down('md')] : {
+        margin : 0
+    }
 `
 
-const Container = styled(Grid)`
-    background : #ffffff;
-    display : flex;
-`
+const Container = styled(Grid)(({theme})=>({
+    background : '#ffffff',
+    display : 'flex'
+}))
 
 const RightContainer = styled(Grid)`
     margin-top : 50px;
