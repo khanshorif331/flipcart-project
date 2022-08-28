@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import {useDispatch,useSelector} from 'react-redux';
 import {useParams} from 'react-router-dom'
 import {getProductDetails} from '../../redux/actions/productActions'
-import {Box, Typography,Grid, styled} from '@mui/material'
+import {Box, Grid, styled} from '@mui/material'
 import ActionItem from './ActionItem';
 import ProductDetail from './ProductDetail';
 

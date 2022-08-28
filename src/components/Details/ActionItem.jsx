@@ -1,7 +1,7 @@
 import { Box ,Button,styled} from '@mui/material';
 import React from 'react';
 import {ShoppingCart as Cart , FlashOn as Flash } from '@mui/icons-material';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/actions/cartAction';
 import { useState } from 'react';
