@@ -6,9 +6,12 @@ import {
 	getProductsReducer,
 } from './reducers/productReducer'
 
+import { cartReducer } from './reducers/cartReducer'
+
 const reducer = combineReducers({
 	getProducts: getProductsReducer,
 	getProductDetails: getProductDetailsReducer,
+	cart: cartReducer,
 })
 
 const middleware = [thunk]
