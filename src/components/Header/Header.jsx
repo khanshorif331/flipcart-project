@@ -1,4 +1,4 @@
-import { AppBar,Toolbar , styled, Box, Typography, IconButton,Drawer} from '@mui/material';
+import { AppBar,Toolbar , styled, Box, Typography, IconButton,Drawer,List,ListItem} from '@mui/material';
 import React from 'react';
 import CustomButtons from './CustomButtons';
 import Search from './Search';
@@ -57,6 +57,20 @@ const Header = () => {
       setOpen(false)
   }
 
+  const list = () => {
+    return (
+      <>
+        <Box>
+          <List>
+          <ListItem button>
+            <CustomButtons></CustomButtons>
+          </ListItem>
+      </List>
+    </Box>
+      </>
+    )
+  }
+
     return (
            <StyledHeader>
             <Toolbar style={{minHeight:55}}>
@@ -67,7 +81,7 @@ const Header = () => {
                 open={open}
                 onClose={handleClose}
               >
-                Hello
+                {list()}
               </Drawer>
               <Component to='/'>
                 <img src={logoURL} alt="logo" style={{width:75}}/>
