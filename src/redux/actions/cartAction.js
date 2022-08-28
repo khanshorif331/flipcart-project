@@ -1,5 +1,5 @@
 import axios from 'axios'
-import * as actionTypes from '../constants/cartConstant'
+import * as actionTypes from '../constants/cartConstants'
 
 const URL = 'http://localhost:5000'
 
