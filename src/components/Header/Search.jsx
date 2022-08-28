@@ -6,6 +6,7 @@ import { useState } from 'react';
 import {useSelector,useDispatch} from 'react-redux'
 import {getProducts} from '../../redux/actions/productActions'
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const SearchContainer = styled(Box)`
     background-color: #fff;
@@ -27,6 +28,13 @@ const SearchIconWrapper = styled(Box)`
     display: flex
 `
 
+const ListWrapper = styled(List)`
+    position : absolute;
+    background : #ffffff;
+    color:#000 ;
+    margin-top : 36px
+`
+
 
 const Search = () => {
     const [text,setText] = useState('')
@@ -45,6 +53,7 @@ const Search = () => {
             <InputSearchBase
             placeholder='Search for products, brands and more'
             onChange={(e) => getText(e.target.value)}
+            value={text}
             >
             </InputSearchBase>
             <SearchIconWrapper>
@@ -52,15 +61,20 @@ const Search = () => {
             </SearchIconWrapper>
             {
                 text && 
-                <List>
+                <ListWrapper>
                     {
                         products.filter(product => product.title.longTitle.toLowerCase().includes(text.toLowerCase())).map(product => {
                             return <ListItem key={product.id}>
+                                <Link to={`/product/${product.id}`}
+                                    onClick={()=>setText('')}
+                                    style={{textDecoration:'none',color:'inherit'}}
+                                >
                                 {product.title.longTitle}
+                                </Link>
                             </ListItem>
                         })
                     }
-                </List>
+                </ListWrapper>
             }
         </SearchContainer>
     );
