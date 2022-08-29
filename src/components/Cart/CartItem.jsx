@@ -1,4 +1,4 @@
-import { Box, Typography,styled } from '@mui/material';
+import { Box, Typography,styled, Button } from '@mui/material';
 import React from 'react';
 
 
@@ -11,6 +11,19 @@ const LeftComponent = styled(Box)`
     margin : 20px
 `
 
+const SmallText = styled(Typography)`
+    color:#878787 ; 
+    font-size : 14px ;
+    margin-top : 10px ;
+`
+
+const Remove = styled(Button)`
+    margin-top : 20px;
+    font-size : 16px ;
+    color: #000;
+    font-weight : 600;
+`
+
 const CartItem = ({item}) => {
     const fassured = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/fa_62673a.png'
     return (
@@ -20,9 +33,15 @@ const CartItem = ({item}) => {
             </LeftComponent>
             <Box>
                 <Typography>{item.title.longTitle}</Typography>
-                <Typography>Seller : RetailNet
+                <SmallText>Seller : RetailNet
                     <Box component='span'><img src={fassured} style={{width:50,marginLeft:10}} alt="Flipcart asssured" /></Box>
-                </Typography>
+                </SmallText>
+                <Typography style={{margin: '20 0'}}>
+                    <Box component='span' style={{fontWeight:600,fontSize:18}}>₹{item.price.cost}</Box>&nbsp;&nbsp;&nbsp; 
+                    <Box component='span' style={{color:'#878787'}}><strike>{item.price.mrp}</strike></Box>&nbsp;&nbsp;&nbsp;
+                    <Box component='span' style={{color:'#388E3C'}}>{item.price.discount}</Box>
+            </Typography>
+            <Remove>Remove</Remove>
             </Box>
         </Compoonent>
     );
