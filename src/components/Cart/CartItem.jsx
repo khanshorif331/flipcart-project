@@ -1,5 +1,6 @@
 import { Box, Typography,styled, Button } from '@mui/material';
 import React from 'react';
+import { addElipsis } from '../../utils/common-utils';
 
 
 const Compoonent = styled(Box)`
@@ -31,8 +32,8 @@ const CartItem = ({item}) => {
             <LeftComponent>
                 <img src={item.url} alt="product" />
             </LeftComponent>
-            <Box>
-                <Typography>{item.title.longTitle}</Typography>
+            <Box style={{margin : 20}}>
+                <Typography>{addElipsis(item.title.longTitle)}</Typography>
                 <SmallText>Seller : RetailNet
                     <Box component='span'><img src={fassured} style={{width:50,marginLeft:10}} alt="Flipcart asssured" /></Box>
                 </SmallText>
