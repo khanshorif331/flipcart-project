@@ -1,4 +1,4 @@
-import { Grid, Typography ,Box,styled} from '@mui/material';
+import { Grid, Typography ,Box,styled, Button} from '@mui/material';
 import React from 'react';
 import {useSelector} from 'react-redux'
 // compoonent
@@ -32,6 +32,9 @@ const Cart = () => {
                                 <CartItem item={item}></CartItem>
                             ))
                         }
+                        <Box>
+                            <Button>Place Order</Button>
+                        </Box>
                     </Grid>
                     <Grid item lg={3} md={3} sm={12} xs={12}>
                         <TotalView></TotalView>
