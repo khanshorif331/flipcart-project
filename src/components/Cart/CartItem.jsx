@@ -6,11 +6,14 @@ import ButtonGroup from './ButtonGroup';
 
 const Compoonent = styled(Box)`
     border-top : 1px solid #f0f0f0 ;
-    display : flex
+    display : flex ;
+    background : #fff;
 `
 
 const LeftComponent = styled(Box)`
-    margin : 20px
+    margin : 20px ;
+    display : flex ; 
+    flex-direction : column ;
 `
 
 const SmallText = styled(Typography)`
