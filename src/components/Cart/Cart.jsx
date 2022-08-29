@@ -1,7 +1,9 @@
 import { Grid, Typography ,Box} from '@mui/material';
 import React from 'react';
 import {useSelector} from 'react-redux'
+// compoonent
 import CartItem from './CartItem';
+import TotalView from './TotalView';
 const Cart = () => {
     const {cartItems} = useSelector(state => state.cart)
     return (
@@ -19,7 +21,9 @@ const Cart = () => {
                             ))
                         }
                     </Grid>
-                    <Grid item lg={3} md={3} sm={12} xs={12}></Grid>
+                    <Grid item lg={3} md={3} sm={12} xs={12}>
+                        <TotalView></TotalView>
+                    </Grid>
                 </Grid>
                 :
                 <div>Empty</div>
