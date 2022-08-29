@@ -1,6 +1,7 @@
 import { Box, Typography,styled, Button } from '@mui/material';
 import React from 'react';
 import { addElipsis } from '../../utils/common-utils';
+import ButtonGroup from './ButtonGroup';
 
 
 const Compoonent = styled(Box)`
@@ -30,7 +31,8 @@ const CartItem = ({item}) => {
     return (
         <Compoonent>
             <LeftComponent>
-                <img src={item.url} alt="product" />
+                <img src={item.url} style={{height:110,width:110}} alt="product" />
+                <ButtonGroup></ButtonGroup>
             </LeftComponent>
             <Box style={{margin : 20}}>
                 <Typography>{addElipsis(item.title.longTitle)}</Typography>
