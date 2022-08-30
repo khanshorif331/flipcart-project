@@ -28,7 +28,8 @@ const Price = styled(Box)`
 `
 
 const Discount = styled(Typography)`
-    color : green
+    color : green ;
+    font-weight : 500
 `
 
 
@@ -42,16 +43,16 @@ const TotalView = ({cartItems}) => {
                 <Typography>Price ({cartItems?.length} item)
                     <Price component='span'>₹100</Price>
                 </Typography>
-                <Discount>Discount
+                <Typography>Discount
                     <Price component='span'>-₹100</Price>
-                </Discount>
+                </Typography>
                 <Typography>Delivery Charges
                     <Price component='span'>₹100</Price>
                 </Typography>
                 <Typography variant='h6'>Total Amount
                     <Price component='span'>₹100</Price>
                 </Typography>
-                <Typography>You will save ₹100 on this order.</Typography>
+                <Discount>You will save ₹100 on this order.</Discount>
             </Container>
         </Box>
     );
