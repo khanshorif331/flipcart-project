@@ -44,7 +44,7 @@ const Cart = () => {
                         </Header>
                         {
                             cartItems.map(item => (
-                                <CartItem item={item}></CartItem>
+                                <CartItem item={item} key={item.id}></CartItem>
                             ))
                         }
                         <WrapperButton>
