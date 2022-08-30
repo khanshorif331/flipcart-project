@@ -9,7 +9,7 @@ import EmptyCart from './EmptyCart';
 
 const Container = styled(Grid) (({theme})=>({
     padding : '30px 135px',
-    [theme.breakpoints.down('sm')]:{
+    [theme.breakpoints.down('md')]:{
         padding : '15px  0'
     } 
 }))
@@ -37,7 +37,7 @@ const StyledButton = styled(Button)`
 
 const LeftComponent = styled(Grid) (({theme})=>({
     paddingRight : '15px',
-    [theme.breakpoints.down('sm')]:{
+    [theme.breakpoints.down('md')]:{
         marginBottom : '15px'
     }
 }))
