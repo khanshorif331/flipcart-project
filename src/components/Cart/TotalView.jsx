@@ -1,27 +1,58 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography ,styled } from '@mui/material';
 import React from 'react';
+
+const Header = styled(Box) `
+    padding : 15px 24px ;
+    background : #fff ;
+    border-bottom : 1px solid #f0f0f0;
+`
+
+const Heading = styled(Typography)`
+    color : #878787;
+`
+
+const Container =styled(Box)`
+    padding : 15px 24px ;
+    background : #fff ;
+    & > p {
+        margin-bottom : 20px;
+        font-size : 14px;
+    }
+    & > h6 {
+        margin-bottom : 20px;
+    }
+`
+
+const Price = styled(Box)`
+    float : right ;
+`
+
+const Discount = styled(Typography)`
+    color : green
+`
+
 
 const TotalView = ({cartItems}) => {
     return (
         <Box>
-            <Box>
-                <Typography>PRICE DETAILS</Typography>
-            </Box>
-            <Box>
+            <Header>
+                <Heading>PRICE DETAILS</Heading>
+            </Header>
+            <Container>
                 <Typography>Price ({cartItems?.length} item)
-                    <Box component='span'>₹100</Box>
+                    <Price component='span'>₹100</Price>
                 </Typography>
-                <Typography>Discount ({cartItems?.length} item)
-                    <Box component='span'>-₹100</Box>
+                <Discount>Discount
+                    <Price component='span'>-₹100</Price>
+                </Discount>
+                <Typography>Delivery Charges
+                    <Price component='span'>₹100</Price>
                 </Typography>
-                <Typography>Delivery Charges ({cartItems?.length} item)
-                    <Box component='span'>₹100</Box>
-                </Typography>
-                <Typography>Total Amount ({cartItems?.length} item)
-                    <Box component='span'>₹100</Box>
+                <Typography variant='h6'>Total Amount
+                    <Price component='span'>₹100</Price>
                 </Typography>
                 <Typography>You will save ₹100 on this order.</Typography>
-            </Box>
+            </Container>
         </Box>
     );
 };
