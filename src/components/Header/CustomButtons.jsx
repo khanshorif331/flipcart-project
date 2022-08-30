@@ -4,6 +4,7 @@ import {ShoppingCart} from '@mui/icons-material';
 import LoginDialogue from '../Login/LoginDialogue';
 import { DataContext } from '../../context/DataProvider';
 import Profile from './Profile';
+import {Link} from 'react-router-dom'
 
 
 const Wrapper = styled(Box) ( ({theme})=> ({
@@ -20,8 +21,10 @@ const Wrapper = styled(Box) ( ({theme})=> ({
 }))
 
 
-const Container = styled(Box) (({theme})=> ({
+const Container = styled(Link) (({theme})=> ({
     display: 'flex',
+    color: 'inherit',
+    textDecoration: 'none',
     [theme.breakpoints.down('md')] : {
         display:'block'
     }
@@ -60,7 +63,7 @@ const CustomButtons = () => {
           
             <Typography style={{marginTop : 3 , width : 135}}>Become a Seller</Typography>
             <Typography style={{marginTop : 3}}>More</Typography>
-            <Container>
+            <Container to='/cart'>
                 <ShoppingCart/>
                 <Typography>Cart</Typography>
             </Container>
