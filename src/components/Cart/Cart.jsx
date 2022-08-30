@@ -12,7 +12,7 @@ const Container = styled(Grid) `
 
 const Header = styled(Box)`
     padding : 15px 24px ; 
-    background : '#fff'
+    background : #fff ;
 `
 
 const WrapperButton = styled(Box)`
