@@ -27,8 +27,7 @@ const StyledButton = styled(Button)`
     margin-left : auto ;
     background : #fb641b;
     color : #fff ; 
-    width : 250px
-
+    width : 220px;
 `
 
 
@@ -53,7 +52,7 @@ const Cart = () => {
                         </WrapperButton>
                     </Grid>
                     <Grid item lg={3} md={3} sm={12} xs={12}>
-                        <TotalView></TotalView>
+                        <TotalView cartItems={cartItems}></TotalView>
                     </Grid>
                 </Container>
                 :
