@@ -22,6 +22,15 @@ const WrapperButton = styled(Box)`
     border-top : 1px solid #f0f0f0
 `
 
+const StyledButton = styled(Button)`
+    display : flex ; 
+    margin-left : auto ;
+    background : #fb641b;
+    color : #fff ; 
+    width : 250px
+
+`
+
 
 const Cart = () => {
     const {cartItems} = useSelector(state => state.cart)
@@ -40,7 +49,7 @@ const Cart = () => {
                             ))
                         }
                         <WrapperButton>
-                            <Button>Place Order</Button>
+                            <StyledButton>Place Order</StyledButton>
                         </WrapperButton>
                     </Grid>
                     <Grid item lg={3} md={3} sm={12} xs={12}>
