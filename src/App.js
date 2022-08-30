@@ -5,6 +5,7 @@ import DataProvider from './context/DataProvider'
 import DetailView from './components/Details/DetailView'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Cart from './components/Cart/Cart'
+import Payment from './components/Payment/Payment'
 
 function App() {
 	return (
@@ -19,6 +20,10 @@ function App() {
 							element={<DetailView></DetailView>}
 						></Route>
 						<Route path="/cart" element={<Cart></Cart>}></Route>
+						<Route
+							path="/payment/:id"
+							element={<Payment></Payment>}
+						></Route>
 					</Routes>
 				</Box>
 			</BrowserRouter>
