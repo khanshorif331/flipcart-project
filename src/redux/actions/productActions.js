@@ -2,7 +2,7 @@ import axios from 'axios'
 // import { GET_PRODUCTS_SUCCESS } from "../constants/productConstant"
 import * as actionTypes from '../constants/productConstant'
 
-const URL = 'http://localhost:5000'
+const URL = 'https://flipcart-clone-server-live.herokuapp.com'
 
 export const getProducts = () => async dispatch => {
 	try {

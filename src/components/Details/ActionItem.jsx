@@ -52,7 +52,9 @@ const ActionItem = ({product}) => {
             </Box>
             <StyledButton onClick={()=>addItemToCart()} variant='contained' style={{marginRight:10,background:'#ff9f00'}}><Cart/>Add to Cart
             </StyledButton>
-            <StyledButton variant='contained' style={{background:'#fb541b'}}><Flash/>Buy Now</StyledButton>
+            <StyledButton variant='contained' style={{background:'#fb541b'}}><Flash/>
+                <a style={{textDecoration:'none',color:'#fff'}} href='https://buy.stripe.com/test_5kA4jSdvO2v27ug144'>Buy Now</a>
+            </StyledButton>
         </LeftContainer>
     );
 };

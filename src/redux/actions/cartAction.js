@@ -1,7 +1,7 @@
 import axios from 'axios'
 import * as actionTypes from '../constants/cartConstants'
 
-const URL = 'http://localhost:5000'
+const URL = 'https://flipcart-clone-server-live.herokuapp.com'
 
 // using thunk as middleware for async action and dispatch is coming from this
 export const addToCart = (id, quantity) => async dispatch => {

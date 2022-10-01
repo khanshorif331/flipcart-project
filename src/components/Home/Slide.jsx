@@ -96,7 +96,7 @@ const Text = styled(Typography)`
             containerClass="carousel-container"
         >
             {
-                products.map(product => {
+                products?.map(product => {
                     return (
                         <Link to ={ `/product/${product.id}`} style={{textDecoration:'none'}} key={product._id}>
                             <Box textAlign='center' style={{padding:'25px 15px'}}>
